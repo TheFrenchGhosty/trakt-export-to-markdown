@@ -119,4 +119,4 @@ This was for personal use first and foremost, I just decided to release it.
 
 Consider this provided as is, as the LICENSE says.
 
-AI sucks, but I'm not a developer, have no interest in becoming one and I'm too poor to hire a contractor.
+AI sucks, but I'm not a developer, have no interest in becoming one and I'm too poor to hire a contractor. Blame capitalism, not me.
