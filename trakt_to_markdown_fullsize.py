@@ -506,7 +506,7 @@ def movie_entry_md(e):
         lines.append(f"- **Trakt:** {e['trakt_url']}\n")
     if e.get("comment"):
         lines.append(f"\n> {e['comment']}\n")
-    year_tag_val = f"#movie-{e['watched_at'].year}" if e.get("watched_at") else "movie-unknown"
+    year_tag_val = f"#movie-{e['year']}" if e.get("year") else "movie-unknown"
     lines.append(f"- **Date Tag:** {year_tag_val}")
     lines.append(f"- **Genres Tags:** {genre_tags_line(e.get('genres', []), 'movie')}\n")
     lines.append("\n---\n")
@@ -540,8 +540,11 @@ def tv_entry_md(e):
         lines.append(f"- **Trakt:** {e['trakt_url']}\n")
     if e.get("comment"):
         lines.append(f"\n> {e['comment']}\n")
-    # New Date Tag ("tv-YYYY")
-    year_tag_val = f"#tv-{e['watched_at'].year}" if e.get("watched_at") else "tv-unknown"
+    # Use the episode release year for the Date Tag
+    if e.get("released_at"):
+        year_tag_val = f"#tv-{e['released_at'].year}"
+    else:
+        year_tag_val = "tv-unknown"
     lines.append(f"- **Date Tag:** {year_tag_val}")
     lines.append(f"- **Genres Tags:** {genre_tags_line(e.get('genres', []), 'tv')}\n")
     lines.append("\n---\n")

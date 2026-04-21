@@ -33,7 +33,7 @@ Convert your [Trakt](https://trakt.tv/) export into beautiful, chronological mar
 ## Usage
 
 1. **Export your Trakt data** from [your settings page](https://trakt.tv/settings/data).
-2. **Extract your Trakt data to a folder named bellow "trakt-export"
+2. **Extract your Trakt data to a folder named bellow "trakt-export"**
 2. **Obtain a free OMDB API key:** [Get it here.](https://www.omdbapi.com/apikey.aspx)
 3. **Install the dependency:**
    ```sh
@@ -63,31 +63,31 @@ Note: When moving the output to the software you're using, it is strongly encour
 ### Movie
 
 ```markdown
-### 2023-02-04 - Pulp Fiction (1994)
+### 2026-02-12 - PG: Psycho Goreman (2020)
 
-![cover](00-Posters/tt0110912.jpg)
+![cover](00-Posters/tt11252440.jpg)
 
 - **Rating:** ⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐ (10/10)
 
-- **Genre:** Crime, Drama
-- **Cast:** John Travolta ([IMDb](https://www.imdb.com/find/?q=John+Travolta&s=nm) - [Wikipedia](https://en.wikipedia.org/wiki/John_Travolta)), Uma Thurman ([IMDb](https://www.imdb.com/find/?q=Uma+Thurman&s=nm) - [Wikipedia](https://en.wikipedia.org/wiki/Uma_Thurman)), Samuel L. Jackson ([IMDb](https://www.imdb.com/find/?q=Samuel+L.+Jackson&s=nm) - [Wikipedia](https://en.wikipedia.org/wiki/Samuel_L._Jackson))
+- **Genre:** Comedy, Horror, Sci-Fi
+- **Cast:** Nita-Josée Hanna ([IMDb](https://www.imdb.com/find/?q=Nita-Jos%C3%A9e+Hanna&s=nm) - [Wikipedia](https://en.wikipedia.org/wiki/Nita-Jos%C3%A9e_Hanna)), Owen Myre ([IMDb](https://www.imdb.com/find/?q=Owen+Myre&s=nm) - [Wikipedia](https://en.wikipedia.org/wiki/Owen_Myre)), Matthew Ninaber ([IMDb](https://www.imdb.com/find/?q=Matthew+Ninaber&s=nm) - [Wikipedia](https://en.wikipedia.org/wiki/Matthew_Ninaber))
 
-- **IMDb:** https://www.imdb.com/title/tt0110912/
-- **Wikipedia:** https://en.wikipedia.org/wiki/Pulp_Fiction
-- **Trakt:** https://trakt.tv/movies/pulp-fiction-1994
+- **IMDb:** https://www.imdb.com/title/tt11252440/
+- **Wikipedia:** https://en.wikipedia.org/wiki/PG%3A_Psycho_Goreman
+- **Trakt:** https://trakt.tv/movies/pg-psycho-goreman-2020
 
-- **Date Tag:** #movie-2023
-- **Genres Tags:** #movie-crime - #movie-drama
+- **Date Tag:** #movie-2020
+- **Genres Tags:** #movie-comedy - #movie-horror - #movie-sci-fi
 ```
 
 ### TV Episode
 
 ```markdown
-### 2025-08-02 - Santa Clarita Diet (2017) - S01E01 - So Then a Bat or a Monkey
+### 2025-08-12 - Santa Clarita Diet (2017) - S03E10 - The Cult of Sheila
 
 ![cover](00-Posters/tt5580540.jpg)
 
-- **Episode Release Date:** 2017-02-03
+- **Episode Release Date:** 2019-03-29
 - **Genre:** Comedy, Horror
 - **Cast:** Drew Barrymore ([IMDb](https://www.imdb.com/find/?q=Drew+Barrymore&s=nm) - [Wikipedia](https://en.wikipedia.org/wiki/Drew_Barrymore)), Timothy Olyphant ([IMDb](https://www.imdb.com/find/?q=Timothy+Olyphant&s=nm) - [Wikipedia](https://en.wikipedia.org/wiki/Timothy_Olyphant)), Liv Hewson ([IMDb](https://www.imdb.com/find/?q=Liv+Hewson&s=nm) - [Wikipedia](https://en.wikipedia.org/wiki/Liv_Hewson))
 
@@ -95,7 +95,7 @@ Note: When moving the output to the software you're using, it is strongly encour
 - **Wikipedia:** https://en.wikipedia.org/wiki/Santa_Clarita_Diet
 - **Trakt:** https://trakt.tv/shows/santa-clarita-diet
 
-- **Date Tag:** #tv-2025
+- **Date Tag:** #tv-2019
 - **Genres Tags:** #tv-comedy - #tv-horror
 ```
 
