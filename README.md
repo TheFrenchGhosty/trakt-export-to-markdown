@@ -1,6 +1,8 @@
-# trakt-export-to-markdown
+# Trakt Export To Markdown
 
-Convert your [Trakt](https://trakt.tv/) export into beautiful, chronological markdown notes (made mainly to work in Obsidian), with local poster images, genres, actors, and direct links for IMDb, Wikipedia, and Trakt.
+Trakt made its UI awful, so I fixed it by only using them for Scrobble and making my own UI from their data export.
+
+This project convert your [Trakt](https://trakt.tv/) export into beautiful, chronological markdown notes (made mainly to work in Obsidian), with local poster images, genres, actors, and direct links for IMDb, Wikipedia, and Trakt.
 
 ---
 
