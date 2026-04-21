@@ -16,6 +16,20 @@ Convert your [Trakt](https://trakt.tv/) export into beautiful, chronological mar
 
 ---
 
+## Screenshots
+
+(Made in Obsidian with the Catppuccin-Machiato color scheme)
+
+### Movie
+
+![movie](./screenshots/movie.png)
+
+### TV Episode
+
+![episode](./screenshots/episode.png)
+
+---
+
 ## Usage
 
 1. **Export your Trakt data** from [your settings page](https://trakt.tv/settings/data).
