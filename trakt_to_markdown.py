@@ -16,7 +16,7 @@ import requests
 # Configuration
 # ---------------------------------------------------------------------------
 OMDB_API_KEY = os.environ.get("OMDB_API_KEY", "")
-OMDB_CACHE_FILE = "omdb_cache.json"
+OMDB_CACHE_FILE = ".omdb_cache.json"
 OUTPUT_DIR = "trakt-markdown"
 POSTER_DIR = os.path.join(OUTPUT_DIR, "00-Posters")
 RATE_LIMIT_DELAY = 0.12  # OMDB free tier: 1000/day

@@ -33,8 +33,7 @@ Convert your [Trakt](https://trakt.tv/) export into beautiful, chronological mar
    - Output appears in `trakt-markdown/` with a `00-Posters/` folder for images.
    - `.md` files are ready!
 
-
-Note: I have decided to make the script get the episode original release date because this is often useful. This requires 1 OMDb API request for each episode. You might have to do it over multiple days or pay for a key with higher limit than 1000 if you've been using Trakt for a while. I personally had around 3500 episodes. If you don't want this feature, you can just edit the script and remove the whole logic to get and print it.
+Note: When moving those the software you're using it is strongly encouraged that you also move the (hidden) `.omdb_cache.json` cache file. It will save you a massive amount of time.
 
 ---
 
@@ -46,6 +45,8 @@ Note: I have decided to make the script get the episode original release date be
 ---
 
 ## Example Output
+
+### Movie
 
 ```markdown
 ### 2023-02-04 - Pulp Fiction (1994)
@@ -65,16 +66,41 @@ Note: I have decided to make the script get the episode original release date be
 - **Genres Tags:** #movie-crime - #movie-drama
 ```
 
+### TV Episode
+
+```markdown
+### 2025-08-02 - Santa Clarita Diet (2017) - S01E01 - So Then a Bat or a Monkey
+
+![cover](00-Posters/tt5580540.jpg)
+
+- **Episode Release Date:** 2017-02-03
+- **Genre:** Comedy, Horror
+- **Cast:** Drew Barrymore ([IMDb](https://www.imdb.com/find/?q=Drew+Barrymore&s=nm) - [Wikipedia](https://en.wikipedia.org/wiki/Drew_Barrymore)), Timothy Olyphant ([IMDb](https://www.imdb.com/find/?q=Timothy+Olyphant&s=nm) - [Wikipedia](https://en.wikipedia.org/wiki/Timothy_Olyphant)), Liv Hewson ([IMDb](https://www.imdb.com/find/?q=Liv+Hewson&s=nm) - [Wikipedia](https://en.wikipedia.org/wiki/Liv_Hewson))
+
+- **IMDb:** https://www.imdb.com/title/tt5580540/
+- **Wikipedia:** https://en.wikipedia.org/wiki/Santa_Clarita_Diet
+- **Trakt:** https://trakt.tv/shows/santa-clarita-diet
+
+- **Date Tag:** #tv-2025
+- **Genres Tags:** #tv-comedy - #tv-horror
+```
+
+---
+
+## About the number of API requests
+
+I have decided to make the script get the episode original release date because this is often useful. This requires 1 OMDb API request for each episode. You might have to do it over multiple days or pay for a key with higher limit than 1000 if you've been using Trakt for a while. I personally had around 3500 episodes. If you don't want this feature, you can just edit the script and remove the whole logic to get and print it.
+
 ---
 
 ## AI Acknowledgement
 
 This project was written and refined with **two different LLM "AI" models**: Claude Opus 4.6 and GPT-4.1 running in "GitHub Copilot Chat". 
 
-I can't personally write Python from scratch, but I made those LLM do exactly what I wanted, and then I tweaked a lot of it by hand. There was a lot of back and force, but this is, at its core still a project made using LLMs.
+I can't personally write Python from scratch, but I made those LLM do exactly what I wanted, and then I tweaked a lot of it by hand. There was a lot of back and forth, but this is, at its core still a project made using LLMs.
 
 This was for personal use first and foremost, I just decided to release it.
 
 Consider this provided as is, as the LICENSE says.
 
-AI sucks, but I'm not a dev and have no interest in becoming one and I'm too poor to hire a contractor.
+AI sucks, but I'm not a developer, have no interest in becoming one and I'm too poor to hire a contractor.
