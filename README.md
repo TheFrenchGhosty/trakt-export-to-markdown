@@ -117,9 +117,9 @@ I have decided to make the script get the episode original release date because 
 
 This project was written and refined with **two different LLM "AI" models**: Claude Opus 4.6 and GPT-4.1 running in "GitHub Copilot Chat". 
 
-I can't personally write Python from scratch, but I made those LLM do exactly what I wanted, and then I tweaked a lot of it by hand. There was a lot of back and forth, but this is, at its core still a project made using LLMs.
+I can't personally write Python from scratch, but I made those LLM do exactly what I wanted, and then I tweaked a lot of it by hand. There was a LOT of back and forth, and a lot of "Human" work, but this is, at its core still a project made using LLMs.
 
-It took me more than 3-5 hours of work (minimum).
+It took me more than 10+ hours of work (minimum).
 
 This was for personal use first and foremost, I just decided to release it.
 
