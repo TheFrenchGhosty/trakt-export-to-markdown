@@ -65,7 +65,23 @@ Note: When moving the output to the software you're using, it is strongly encour
 ### Movie
 
 ```markdown
+### 2026-02-12 - PG: Psycho Goreman (2020)
 
+![cover](00-Posters/tt11252440.jpg)
+
+- **Rating:** ⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐ (10/10)
+
+- **Genre:** Comedy, Horror, Sci-Fi
+- **Director:** Steven Kostanski ([IMDb](https://www.imdb.com/find/?q=Steven+Kostanski&s=nm) - [Wikipedia](https://en.wikipedia.org/wiki/Steven_Kostanski))
+- **Writer:** Steven Kostanski ([IMDb](https://www.imdb.com/find/?q=Steven+Kostanski&s=nm) - [Wikipedia](https://en.wikipedia.org/wiki/Steven_Kostanski))
+- **Cast:** Nita-Josée Hanna ([IMDb](https://www.imdb.com/find/?q=Nita-Jos%C3%A9e+Hanna&s=nm) - [Wikipedia](https://en.wikipedia.org/wiki/Nita-Jos%C3%A9e_Hanna)), Owen Myre ([IMDb](https://www.imdb.com/find/?q=Owen+Myre&s=nm) - [Wikipedia](https://en.wikipedia.org/wiki/Owen_Myre)), Matthew Ninaber ([IMDb](https://www.imdb.com/find/?q=Matthew+Ninaber&s=nm) - [Wikipedia](https://en.wikipedia.org/wiki/Matthew_Ninaber))
+
+- **IMDb:** https://www.imdb.com/title/tt11252440/
+- **Wikipedia:** https://en.wikipedia.org/wiki/PG%3A_Psycho_Goreman
+- **Trakt:** https://trakt.tv/movies/pg-psycho-goreman-2020
+
+- **Date Tag:** #movie-2020
+- **Genres Tags:** #movie-comedy - #movie-horror - #movie-sci-fi
 ```
 
 ### TV Episode
@@ -86,23 +102,7 @@ Note: When moving the output to the software you're using, it is strongly encour
 - **Trakt:** https://trakt.tv/shows/santa-clarita-diet
 
 - **Date Tag:** #tv-2019
-- **Genres Tags:** #tv-comedy - #tv-horror### 2026-02-12 - PG: Psycho Goreman (2020)
-
-![cover](00-Posters/tt11252440.jpg)
-
-- **Rating:** ⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐ (10/10)
-
-- **Genre:** Comedy, Horror, Sci-Fi
-- **Director:** Steven Kostanski ([IMDb](https://www.imdb.com/find/?q=Steven+Kostanski&s=nm) - [Wikipedia](https://en.wikipedia.org/wiki/Steven_Kostanski))
-- **Writer:** Steven Kostanski ([IMDb](https://www.imdb.com/find/?q=Steven+Kostanski&s=nm) - [Wikipedia](https://en.wikipedia.org/wiki/Steven_Kostanski))
-- **Cast:** Nita-Josée Hanna ([IMDb](https://www.imdb.com/find/?q=Nita-Jos%C3%A9e+Hanna&s=nm) - [Wikipedia](https://en.wikipedia.org/wiki/Nita-Jos%C3%A9e_Hanna)), Owen Myre ([IMDb](https://www.imdb.com/find/?q=Owen+Myre&s=nm) - [Wikipedia](https://en.wikipedia.org/wiki/Owen_Myre)), Matthew Ninaber ([IMDb](https://www.imdb.com/find/?q=Matthew+Ninaber&s=nm) - [Wikipedia](https://en.wikipedia.org/wiki/Matthew_Ninaber))
-
-- **IMDb:** https://www.imdb.com/title/tt11252440/
-- **Wikipedia:** https://en.wikipedia.org/wiki/PG%3A_Psycho_Goreman
-- **Trakt:** https://trakt.tv/movies/pg-psycho-goreman-2020
-
-- **Date Tag:** #movie-2020
-- **Genres Tags:** #movie-comedy - #movie-horror - #movie-sci-fi
+- **Genres Tags:** #tv-comedy - #tv-horror
 ```
 
 ---
