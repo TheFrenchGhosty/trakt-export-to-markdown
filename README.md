@@ -6,19 +6,7 @@ This project convert your [Trakt](https://trakt.tv/) export into beautiful, chro
 
 ---
 
-## Features
-
-- Markdown files grouped by year, with one entry per watch
-- Local **poster images** saved for offline viewing (you can rerun the script without issue, they wont be re-downloaded)
-- Shows top 3 genres (plus genre tags for quick search)
-- Cast list (top-billed), with IMDb and Wikipedia lookup links
-- Direct URLs for IMDb, Wikipedia, and Trakt, not behind link text
-- Customizable and easy to extend
-- Supports history, watchlists, and favorites
-
----
-
-## Screenshots
+### Screenshots
 
 (Made in Obsidian with the Catppuccin-Machiato color scheme)
 
