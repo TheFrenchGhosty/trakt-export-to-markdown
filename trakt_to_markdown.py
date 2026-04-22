@@ -19,11 +19,12 @@ OMDB_API_KEY = os.environ.get("OMDB_API_KEY", "")
 OMDB_CACHE_FILE = ".omdb_cache.json"
 OUTPUT_DIR = "trakt-markdown"
 POSTER_DIR = os.path.join(OUTPUT_DIR, "00-Posters")
-RATE_LIMIT_DELAY = 0.12  # OMDB free tier: 1000/day
+RATE_LIMIT_DELAY = 0.1  # OMDB free tier: 1000/day
 MAX_GENRES = 3
+MAX_EPISODES_OMDB = 1000000  # Number of episode to get the release date, set to a low value or 0 if you don't want to bother getting it - useful when testing
 
 # ---------------------------------------------------------------------------
-# OMDB cache (maps imdb_id -> {poster, actors, genres} or None), plus per-episode releases
+# OMDB cache (maps imdb_id -> {poster, actors, genres, director, writer} or None), plus per-episode releases
 # ---------------------------------------------------------------------------
 def load_cache():
     if os.path.exists(OMDB_CACHE_FILE):
@@ -36,7 +37,7 @@ def save_cache(cache):
         json.dump(cache, f, indent=2)
 
 def fetch_omdb_data(imdb_id, cache, progress=None):
-    """Fetch poster URL, actor list, and genres from OMDB for movies/shows."""
+    """Fetch poster URL, actor list, genres, director, and writer from OMDB for movies/shows."""
     if not imdb_id:
         return None
     if imdb_id in cache:
@@ -71,7 +72,15 @@ def fetch_omdb_data(imdb_id, cache, progress=None):
         else:
             genres = []
 
-        entry = {"poster": poster, "actors": actors, "genres": genres}
+        director = data.get("Director")
+        if director == "N/A":
+            director = None
+
+        writer = data.get("Writer")
+        if writer == "N/A":
+            writer = None
+
+        entry = {"poster": poster, "actors": actors, "genres": genres, "director": director, "writer": writer}
         cache[imdb_id] = entry
         return entry
     except Exception as e:
@@ -105,7 +114,13 @@ def fetch_omdb_episode_released(show_imdb_id, season, episode, cache):
         r.raise_for_status()
         data = r.json()
         released = data.get("Released", "N/A")
-        cache[cache_key] = {"released": released}
+        director = data.get("Director")
+        if director == "N/A":
+            director = None
+        writer = data.get("Writer")
+        if writer == "N/A":
+            writer = None
+        cache[cache_key] = {"released": released, "director": director, "writer": writer}
         return cache[cache_key]
     except Exception as e:
         print(f"  ⚠ OMDB episode lookup failed for {show_imdb_id} S{season}E{episode}: {e}")
@@ -268,7 +283,6 @@ def fetch_all_data(history, list_data_sets, cache):
             if show_imdb_id and season and epnum:
                 episode_keys.add((show_imdb_id, season, epnum))
 
-    MAX_EPISODES_OMDB = 400  # set your comfort level
     if episode_keys:
         print(f"\nFetching OMDb release dates for {len(episode_keys)} unique episodes...\n", flush=True)
         if len(episode_keys) > MAX_EPISODES_OMDB:
@@ -308,6 +322,24 @@ def get_cached_genres(imdb_id, cache):
     if not entry or not isinstance(entry, dict):
         return []
     return entry.get("genres", [])
+
+def get_cached_director(imdb_id, cache):
+    if not imdb_id:
+        return None
+    entry = cache.get(imdb_id)
+    if not entry or not isinstance(entry, dict):
+        return None
+    director = entry.get("director")
+    return director
+
+def get_cached_writer(imdb_id, cache):
+    if not imdb_id:
+        return None
+    entry = cache.get(imdb_id)
+    if not entry or not isinstance(entry, dict):
+        return None
+    writer = entry.get("writer")
+    return writer
 
 # ---------------------------------------------------------------------------
 # Link helpers
@@ -369,6 +401,8 @@ def parse_history(history, ratings_map, comments_map, cache):
                 "poster": get_cached_poster_path(imdb_id, cache),
                 "actors": get_cached_actors(imdb_id, cache),
                 "genres": get_cached_genres(imdb_id, cache),
+                "director": get_cached_director(imdb_id, cache),
+                "writer": get_cached_writer(imdb_id, cache),
                 "imdb_id": imdb_id,
                 "trakt_url": f"https://trakt.tv/movies/{slug}" if slug else "",
             })
@@ -386,11 +420,12 @@ def parse_history(history, ratings_map, comments_map, cache):
             ep_number = episode.get("number", 0)
             ep_title = episode.get("title", "")
 
-            # OMDb episode lookup cache key and fetch release date if available
             omdb_episode_key = f"{imdb_id}_S{season}E{ep_number}"
             omdb_ep = cache.get(omdb_episode_key, {})
             released_str = omdb_ep.get("released")
             released_at = parse_omdb_released(released_str)
+            episode_director = omdb_ep.get("director")
+            episode_writer = omdb_ep.get("writer")
 
             tv_entries.append({
                 "title": show_title,
@@ -400,6 +435,8 @@ def parse_history(history, ratings_map, comments_map, cache):
                 "episode_title": ep_title,
                 "watched_at": watched_at,
                 "released_at": released_at,
+                "director": episode_director,
+                "writer": episode_writer,
                 "rating": ratings_map.get(("episode", ep_ids.get("trakt"))),
                 "comment": comments_map.get(("episode", ep_ids.get("trakt"))),
                 "poster": get_cached_poster_path(imdb_id, cache),
@@ -437,6 +474,8 @@ def parse_list_file(data, ratings_map, comments_map, cache):
                 "poster": get_cached_poster_path(imdb_id, cache),
                 "actors": get_cached_actors(imdb_id, cache),
                 "genres": get_cached_genres(imdb_id, cache),
+                "director": get_cached_director(imdb_id, cache),
+                "writer": get_cached_writer(imdb_id, cache),
                 "imdb_id": imdb_id,
                 "trakt_url": f"https://trakt.tv/movies/{slug}" if slug else "",
             })
@@ -484,6 +523,12 @@ def movie_entry_md(e):
         lines.append(f"- **Rating:** {rating_stars(e['rating'])}\n")
     if e.get("genres"):
         lines.append(f"- **Genre:** {genre_nice_line(e['genres'])}")
+    if e.get("director"):
+        director_links = ", ".join(actor_markdown(d) for d in e["director"].split(", ")) if "," in e["director"] else actor_markdown(e["director"])
+        lines.append(f"- **Director:** {director_links}")
+    if e.get("writer"):
+        writer_links = ", ".join(actor_markdown(w) for w in e["writer"].split(", ")) if "," in e["writer"] else actor_markdown(e["writer"])
+        lines.append(f"- **Writer:** {writer_links}")
     if e.get("actors"):
         actor_links = ", ".join(actor_markdown(a) for a in e["actors"])
         lines.append(f"- **Cast:** {actor_links}\n")
@@ -494,7 +539,7 @@ def movie_entry_md(e):
         lines.append(f"- **Trakt:** {e['trakt_url']}\n")
     if e.get("comment"):
         lines.append(f"\n> {e['comment']}\n")
-    year_tag_val = f"#movie-{e['year']}" if e.get("year") else "movie-unknown"
+    year_tag_val = f"#movie-{e['year']}" if e.get("year") else "#movie-year-unknown"
     lines.append(f"- **Date Tag:** {year_tag_val}")
     lines.append(f"- **Genres Tags:** {genre_tags_line(e.get('genres', []), 'movie')}\n")
     lines.append("\n---\n")
@@ -518,6 +563,12 @@ def tv_entry_md(e):
     lines.append(f"- **Episode Release Date:** {release_str}")
     if e.get("genres"):
         lines.append(f"- **Genre:** {genre_nice_line(e['genres'])}")
+    if e.get("director"):
+        director_links = ", ".join(actor_markdown(d) for d in e["director"].split(", ")) if "," in e["director"] else actor_markdown(e["director"])
+        lines.append(f"- **Director:** {director_links}")
+    if e.get("writer"):
+        writer_links = ", ".join(actor_markdown(w) for w in e["writer"].split(", ")) if "," in e["writer"] else actor_markdown(e["writer"])
+        lines.append(f"- **Writer:** {writer_links}")
     if e.get("actors"):
         actor_links = ", ".join(actor_markdown(a) for a in e["actors"])
         lines.append(f"- **Cast:** {actor_links}\n")
@@ -528,11 +579,10 @@ def tv_entry_md(e):
         lines.append(f"- **Trakt:** {e['trakt_url']}\n")
     if e.get("comment"):
         lines.append(f"\n> {e['comment']}\n")
-    # Use the episode release year for the Date Tag
     if e.get("released_at"):
         year_tag_val = f"#tv-{e['released_at'].year}"
     else:
-        year_tag_val = "tv-unknown"
+        year_tag_val = "#tv-year-unknown"
     lines.append(f"- **Date Tag:** {year_tag_val}")
     lines.append(f"- **Genres Tags:** {genre_tags_line(e.get('genres', []), 'tv')}\n")
     lines.append("\n---\n")

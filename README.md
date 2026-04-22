@@ -65,21 +65,7 @@ Note: When moving the output to the software you're using, it is strongly encour
 ### Movie
 
 ```markdown
-### 2026-02-12 - PG: Psycho Goreman (2020)
 
-![cover](00-Posters/tt11252440.jpg)
-
-- **Rating:** ⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐ (10/10)
-
-- **Genre:** Comedy, Horror, Sci-Fi
-- **Cast:** Nita-Josée Hanna ([IMDb](https://www.imdb.com/find/?q=Nita-Jos%C3%A9e+Hanna&s=nm) - [Wikipedia](https://en.wikipedia.org/wiki/Nita-Jos%C3%A9e_Hanna)), Owen Myre ([IMDb](https://www.imdb.com/find/?q=Owen+Myre&s=nm) - [Wikipedia](https://en.wikipedia.org/wiki/Owen_Myre)), Matthew Ninaber ([IMDb](https://www.imdb.com/find/?q=Matthew+Ninaber&s=nm) - [Wikipedia](https://en.wikipedia.org/wiki/Matthew_Ninaber))
-
-- **IMDb:** https://www.imdb.com/title/tt11252440/
-- **Wikipedia:** https://en.wikipedia.org/wiki/PG%3A_Psycho_Goreman
-- **Trakt:** https://trakt.tv/movies/pg-psycho-goreman-2020
-
-- **Date Tag:** #movie-2020
-- **Genres Tags:** #movie-comedy - #movie-horror - #movie-sci-fi
 ```
 
 ### TV Episode
@@ -91,6 +77,8 @@ Note: When moving the output to the software you're using, it is strongly encour
 
 - **Episode Release Date:** 2019-03-29
 - **Genre:** Comedy, Horror
+- **Director:** Marc Buckland ([IMDb](https://www.imdb.com/find/?q=Marc+Buckland&s=nm) - [Wikipedia](https://en.wikipedia.org/wiki/Marc_Buckland))
+- **Writer:** Victor Fresco ([IMDb](https://www.imdb.com/find/?q=Victor+Fresco&s=nm) - [Wikipedia](https://en.wikipedia.org/wiki/Victor_Fresco)), Melissa Hunter ([IMDb](https://www.imdb.com/find/?q=Melissa+Hunter&s=nm) - [Wikipedia](https://en.wikipedia.org/wiki/Melissa_Hunter))
 - **Cast:** Drew Barrymore ([IMDb](https://www.imdb.com/find/?q=Drew+Barrymore&s=nm) - [Wikipedia](https://en.wikipedia.org/wiki/Drew_Barrymore)), Timothy Olyphant ([IMDb](https://www.imdb.com/find/?q=Timothy+Olyphant&s=nm) - [Wikipedia](https://en.wikipedia.org/wiki/Timothy_Olyphant)), Liv Hewson ([IMDb](https://www.imdb.com/find/?q=Liv+Hewson&s=nm) - [Wikipedia](https://en.wikipedia.org/wiki/Liv_Hewson))
 
 - **IMDb:** https://www.imdb.com/title/tt5580540/
@@ -98,7 +86,23 @@ Note: When moving the output to the software you're using, it is strongly encour
 - **Trakt:** https://trakt.tv/shows/santa-clarita-diet
 
 - **Date Tag:** #tv-2019
-- **Genres Tags:** #tv-comedy - #tv-horror
+- **Genres Tags:** #tv-comedy - #tv-horror### 2026-02-12 - PG: Psycho Goreman (2020)
+
+![cover](00-Posters/tt11252440.jpg)
+
+- **Rating:** ⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐ (10/10)
+
+- **Genre:** Comedy, Horror, Sci-Fi
+- **Director:** Steven Kostanski ([IMDb](https://www.imdb.com/find/?q=Steven+Kostanski&s=nm) - [Wikipedia](https://en.wikipedia.org/wiki/Steven_Kostanski))
+- **Writer:** Steven Kostanski ([IMDb](https://www.imdb.com/find/?q=Steven+Kostanski&s=nm) - [Wikipedia](https://en.wikipedia.org/wiki/Steven_Kostanski))
+- **Cast:** Nita-Josée Hanna ([IMDb](https://www.imdb.com/find/?q=Nita-Jos%C3%A9e+Hanna&s=nm) - [Wikipedia](https://en.wikipedia.org/wiki/Nita-Jos%C3%A9e_Hanna)), Owen Myre ([IMDb](https://www.imdb.com/find/?q=Owen+Myre&s=nm) - [Wikipedia](https://en.wikipedia.org/wiki/Owen_Myre)), Matthew Ninaber ([IMDb](https://www.imdb.com/find/?q=Matthew+Ninaber&s=nm) - [Wikipedia](https://en.wikipedia.org/wiki/Matthew_Ninaber))
+
+- **IMDb:** https://www.imdb.com/title/tt11252440/
+- **Wikipedia:** https://en.wikipedia.org/wiki/PG%3A_Psycho_Goreman
+- **Trakt:** https://trakt.tv/movies/pg-psycho-goreman-2020
+
+- **Date Tag:** #movie-2020
+- **Genres Tags:** #movie-comedy - #movie-horror - #movie-sci-fi
 ```
 
 ---
