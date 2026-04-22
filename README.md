@@ -55,7 +55,7 @@ Note: When moving the output to the markdown software you're using, it is strong
 ```markdown
 ### 2026-02-12 - PG: Psycho Goreman (2020)
 
-![cover](00-Posters/tt11252440.jpg)
+![poster](00-Posters/tt11252440.jpg)
 
 - **Rating:** ⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐ (10/10)
 
@@ -77,7 +77,7 @@ Note: When moving the output to the markdown software you're using, it is strong
 ```markdown
 ### 2025-08-12 - Santa Clarita Diet (2017) - S03E10 - The Cult of Sheila
 
-![cover](00-Posters/tt5580540.jpg)
+![poster](00-Posters/tt5580540.jpg)
 
 - **Episode Release Date:** 2019-03-29
 - **Genre:** Comedy, Horror

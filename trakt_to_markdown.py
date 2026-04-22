@@ -518,7 +518,7 @@ def movie_entry_md(e):
     year_str = f" ({e['year']})" if e.get("year") else ""
     lines.append(f"### {date_str} - {e['title']}{year_str}\n")
     if e.get("poster"):
-        lines.append(f"![cover]({e['poster']})\n")
+        lines.append(f"![poster]({e['poster']})\n")
     if e.get("rating"):
         lines.append(f"- **Rating:** {rating_stars(e['rating'])}\n")
     if e.get("genres"):
@@ -556,7 +556,7 @@ def tv_entry_md(e):
     else:
         lines.append(f"### {date_str} - {e['title']}{year_str}\n")
     if e.get("poster"):
-        lines.append(f"![cover]({e['poster']})\n")
+        lines.append(f"![poster]({e['poster']})\n")
     if e.get("rating"):
         lines.append(f"- **Rating:** {rating_stars(e['rating'])}\n")
     release_str = e.get("released_at").strftime("%Y-%m-%d") if e.get("released_at") else "Unknown release date"
