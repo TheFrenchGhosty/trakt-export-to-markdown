@@ -2,11 +2,11 @@
 
 Trakt made its UI awful, so I fixed it by only using them for Scrobble and making my own UI from their data export.
 
-This project convert your [Trakt](https://trakt.tv/) export into beautiful, chronological markdown notes (made mainly to work in Obsidian), with local poster images, genres, actors, and direct links for IMDb, Wikipedia, and Trakt.
+This project convert your [Trakt](https://trakt.tv/) export into beautiful, chronological markdown notes (made mainly to work in Obsidian), with local poster images, genres, actors, directors, writers, and direct links for IMDb, Wikipedia, and Trakt.
 
 ---
 
-### Screenshots
+## Screenshots
 
 (Made in Obsidian with the Catppuccin-Machiato color scheme)
 
@@ -22,7 +22,7 @@ This project convert your [Trakt](https://trakt.tv/) export into beautiful, chro
 
 ## Usage
 
-1. **Export your Trakt data** from [your settings page](https://trakt.tv/settings/data).
+1. **Export your Trakt data** from [your settings page](https://app.trakt.tv/settings/data).
 2. **Extract your Trakt data to a folder named bellow "trakt-export"**
 2. **Obtain a free OMDB API key:** [Get it here.](https://www.omdbapi.com/apikey.aspx)
 3. **Install the dependency:**
@@ -37,7 +37,7 @@ This project convert your [Trakt](https://trakt.tv/) export into beautiful, chro
    - Output appears in `trakt-markdown/` with a `00-Posters/` folder for images.
    - `.md` files are ready!
 
-Note: When moving the output to the software you're using, it is strongly encouraged that you also move the (hidden) `.omdb_cache.json` cache file. It will save you a massive amount of time.
+Note: When moving the output to the markdown software you're using, it is strongly encouraged that you also move the (hidden) `.omdb_cache.json` cache file along with them. It will save you a massive amount of time the next time you run the script with it next to it (to get updated markdown files).
 
 ---
 
