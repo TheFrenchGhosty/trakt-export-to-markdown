@@ -1,3 +1,8 @@
+> [!IMPORTANT]
+> **Current State**: I am exporting my data from Trakt often and running this script on it, $${\color{orange}as \space of \space \color{red} 2026-04-29 \color{orange} \space it's \space working \space perfectly}$$, **including using a previously generated `.omdb_cache.json` file**
+
+---
+
 # Trakt Export To Markdown
 
 Trakt made its UI awful, so I fixed it by only using them for Scrobble and making my own UI from their data export.
