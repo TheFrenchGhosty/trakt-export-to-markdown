@@ -1,5 +1,5 @@
 > [!IMPORTANT]
-> **Current State**: I am exporting my data from Trakt often and running this script on it, $${\color{orange}as \space of \space \color{red} 2026-04-29 \color{orange} \space it's \space working \space perfectly}$$, **including using a previously generated `.omdb_cache.json` file**
+> **Current State**: I am exporting my data from Trakt often and running this script on it, $${\color{orange}as \space of \space \color{red} 2026-05-02 \color{orange} \space it's \space working \space perfectly}$$, **including using a previously generated `.omdb_cache.json` file**
 
 ---
 
